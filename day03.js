@@ -9,12 +9,13 @@ let positionsZeros = {}
 for(let i=0;i<data.length; i++){
     for(let j=0;j<data[0].length;j++){
         if(data[i][j]=="0"){
-            positionsZeros[j] ? positionsZeros[j]+=1 : positionsZeros[j] = 1
+            positionsZeros[j] ? positionsZeros[j]+=1 : positionsZeros[j]=1
         }
     }
+    
 }
 
-for (const pos in positionsZeros) {
+for(const pos in positionsZeros){
     if(positionsZeros[pos]<(data.length/2)){
         gamma += '1'
         epsilon += '0'
@@ -28,8 +29,6 @@ console.log(`Part one = ${parseInt(gamma, 2) * parseInt(epsilon, 2)}`)
 
 let oxygen
 let co2
-partTwo(0, data, 'o2')
-partTwo(0, data, 'co2')
 
 function partTwo(index, arr, criteria){
     let zeroes = 0
@@ -50,5 +49,8 @@ function partTwo(index, arr, criteria){
         partTwo(index+1,newArr,criteria)  
     }
 }
+
+partTwo(0, data, 'o2')
+partTwo(0, data, 'co2')
 
 console.log(`Part two = ${oxygen*co2}`)
