@@ -4,19 +4,10 @@ let data = read.toString().split("\n")
 
 let gamma = ''
 let epsilon = ''
-let positionsZeros = {}
 
-for(let i=0;i<data.length; i++){
-    for(let j=0;j<data[0].length;j++){
-        if(data[i][j]=="0"){
-            positionsZeros[j] ? positionsZeros[j]+=1 : positionsZeros[j]=1
-        }
-    }
-    
-}
-
-for(const pos in positionsZeros){
-    if(positionsZeros[pos]<(data.length/2)){
+for(let j=0;j<data[0].length;j++){
+    let r = data.map(el=>el[j]).filter(el=>el=='0').length
+    if(r<data.length/2){
         gamma += '1'
         epsilon += '0'
     }else{
