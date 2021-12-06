@@ -55,8 +55,8 @@ function day06(limit, part){
     
     console.log(`Part ${part} = ${k}`)
 }
-console.time('l')
+
 day06(80,'one')
 day06(256, 'two')
-console.timeEnd('l')
+
 
