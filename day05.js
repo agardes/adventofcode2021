@@ -33,20 +33,16 @@ function day05(part){
                         pos = `${x}-${y}`
                         positions[pos] = positions[pos] ? positions[pos]+=1 : 1
                         ydown ? y-- : y++
-                    }
-                    
+                    }    
                 }
-            }
-    
-           
+            }  
     }
-    
     
     Object.filter = (obj, predicate) => 
         Object.keys(obj)
               .filter( key => predicate(obj[key]) )
               .reduce( (res, key) => (res[key] = obj[key], res), {} );
-    
+              
     let filtered = Object.filter(positions, qty => qty > 1); 
     console.log(`Part ${part} = ${Object.keys(filtered).length}`)
 }
