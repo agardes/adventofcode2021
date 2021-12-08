@@ -37,7 +37,7 @@ data.forEach(out => {
 })
 
 function populateNumbers(obj, letters){
-    let posLetter = {'T':null,'M':null,'B':null,'TL':null,'TR':obj[1],'BL':null,'BR':obj[1]}
+    let posLetter = {'T':null,'M':null,'B':null,'TL':null,'TR':obj[1],'BL':null,'BR':obj[1]} // Top - Middle - Bottom - TopLeft - TopRight - BottomLeft - BottomRight
     posLetter['T'] = obj[7].filter(x => !obj[1].includes(x))[0];
     posLetter['B'] = posLetter['BL'] =  obj[8].filter(x => !obj[1].includes(x) && !obj[4].includes(x) && !obj[7].includes(x));
     posLetter['M'] = posLetter['TL'] =  obj[4].filter(x => !obj[1].includes(x));
