@@ -25,29 +25,23 @@ function getAdjacent(rowY, nbX){
     if(nbX!==length-1){
         adj.push(right)
     }
-
     return adj
-
-    
 }
+
 data.forEach((row,i,arr)=>{
     for(let j=0;j<length;j++){
         let current = parseInt(row[j])
         let adj = getAdjacent(i,j)
         let isLow = true
         adj.forEach(ind=>{
-           let y = ind[0]
-           let x = ind[1]
-            if(current >= parseInt(arr[y][x])){
+            if(current >= parseInt(arr[ind[0]][ind[1]])){
                 isLow = false
             }
         })
-
         if(isLow){
             risk += current+1
             lowpoints.push([current,i,j])
         }
-        
     }
 })
 
