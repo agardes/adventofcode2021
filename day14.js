@@ -11,7 +11,6 @@ read.toString().split("\r\n").forEach((el,i)=>{
 })
 const day14 = {
     step:0,
-    flashes:0,
     totalStep:10,
     run: function(part){
         while(this.totalStep>this.step){
@@ -53,5 +52,3 @@ const day14 = {
 
 }
 day14.run('one')
-
-// day11.run('two')
