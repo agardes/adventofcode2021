@@ -2,9 +2,6 @@ let targetX = {min:195,max:238}
 let targetY = {min:-93,max:-67}
 
 const day17 = {
-    currentX:0,
-    currentY:0,
-    step:0,
     higherY:0,
     partTwo:[],
     run(){
@@ -31,7 +28,6 @@ const day17 = {
             higher = currentY > higher ? currentY : higher
             velX > 0 ? velX-=1 : velX < 0 ? velX+=1 : 0
             velY-=1
-            this.step++
             if(currentX>=targetX.min && currentX<=targetX.max && currentY>=targetY.min && currentY<=targetY.max){
                 flying=false
                 this.higherY = higher > this.higherY ? higher : this.higherY
